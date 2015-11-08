@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("policy1", Context.MODE_WORLD_READABLE);
         policy1 = prefs.getString("policy1", null);
         Log.d("PKDLog", "policy1: " + policy1);
-        Toast.makeText(this, policy1, Toast.LENGTH_LONG);
+        Toast.makeText(this, policy1, Toast.LENGTH_SHORT).show();
     }
 
     private void togglePolicyUsingContentProvider(boolean isChecked) {
