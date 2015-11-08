@@ -71,18 +71,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void togglePolicyUsingSystemProperties(boolean isChecked) {
-        String policy1;
-        if (isChecked) {
-            System.setProperty("policy1", "true");
-            policy1 = System.getProperty("POLICY1");
-        } else {
-            System.setProperty("policy1", "false");
-            policy1 = System.getProperty("POLICY1");
-        }
-        Log.d("PKDLog", "policy1: " + policy1);
-    }
-
+//    private void togglePolicyUsingSystemProperties(boolean isChecked) {
+//        String policy1;
+//        if (isChecked) {
+//            System.setProperty("policy1", "true");
+//            policy1 = System.getProperty("POLICY1");
+//        } else {
+//            System.setProperty("policy1", "false");
+//            policy1 = System.getProperty("POLICY1");
+//        }
+//        Log.d("PKDLog", "policy1: " + policy1);
+//    }
+//
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items to the action bar if it is present.
