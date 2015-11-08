@@ -9,6 +9,22 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Hello World!\nThis is Heimdall, setting your access control policies.\nUse switch below to change your policy."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textAlignment="center"
+        android:id="@+id/textView" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share images taken by camera"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textAlignment="center"
+        android:id="@+id/policy1Switch"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
