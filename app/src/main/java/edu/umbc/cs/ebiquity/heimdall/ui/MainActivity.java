@@ -1,7 +1,9 @@
 package edu.umbc.cs.ebiquity.heimdall.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -19,19 +22,41 @@ import android.widget.ToggleButton;
 import edu.umbc.cs.ebiquity.heimdall.R;
 
 public class MainActivity extends AppCompatActivity {
-    private Switch policy1Switch;
+    private Switch mPolicy1Switch;
+    private Button mShowAppsButton;
+    private Button mDeleteAppButton;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        policy1Switch = (Switch) findViewById(R.id.policy1Switch);
-        policy1Switch.setChecked(getPolicyState());
-        policy1Switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        mShowAppsButton = (Button) findViewById(R.id.showAppsButton);
+        mShowAppsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ShowAppsMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mDeleteAppButton = (Button) findViewById(R.id.deleteAppButton);
+        mDeleteAppButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DELETE);
+                intent.setData(Uri.parse(getAppToDelete()));
+                startActivity(intent);
+            }
+        });
+
+        mPolicy1Switch = (Switch) findViewById(R.id.policy1Switch);
+        mPolicy1Switch.setChecked(getPolicyState());
+        mPolicy1Switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 /**
@@ -51,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    private String getAppToDelete() {
+        return "package:edu.umbc.cs.ebiquity.mithril.parserapp";
     }
 
     private boolean getPolicyState() {

@@ -27,4 +27,23 @@
         android:layout_marginTop="60dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Apps"
+        android:id="@+id/showAppsButton"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete App Instructed By Server"
+        android:id="@+id/deleteAppButton"
+        android:layout_below="@+id/showAppsButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/showAppsButton" />
+
 </RelativeLayout>
