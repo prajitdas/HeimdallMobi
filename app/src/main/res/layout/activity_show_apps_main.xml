@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.umbc.cs.ebiquity.mithril.currentapps.ui.ShowAppsMainActivity" >
+
+    <ScrollView 
+        android:layout_height="match_parent"         
+        android:layout_width="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:scrollbars="horizontal|vertical"     
+        android:scrollbarStyle="outsideInset"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"> 
+    	<LinearLayout
+	        android:orientation="vertical"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" >
+				<ListView
+				    android:id="@android:id/list"
+				    android:layout_width="match_parent"
+				    android:layout_height="match_parent"
+               		android:layout_weight="1"
+               		android:drawSelectorOnTop="false" >
+				</ListView>
+				<TextView android:id="@android:id/empty"
+				    android:layout_width="match_parent"
+				    android:layout_height="match_parent"
+				    android:gravity="center"
+				    android:text="@string/no_data"/>
+	   	</LinearLayout>
+    </ScrollView>
+</RelativeLayout>

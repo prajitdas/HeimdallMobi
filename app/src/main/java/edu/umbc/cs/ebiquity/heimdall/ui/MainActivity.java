@@ -1,4 +1,4 @@
-package edu.umbc.cs.ebiquity.heimdall;
+package edu.umbc.cs.ebiquity.heimdall.ui;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,6 +15,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import edu.umbc.cs.ebiquity.heimdall.R;
 
 public class MainActivity extends AppCompatActivity {
     private Switch policy1Switch;

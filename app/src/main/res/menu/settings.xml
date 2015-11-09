@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.umbc.cs.ebiquity.mithril.hma.ui.MainActivity" >
+
+    <item
+        android:id="@+id/send_data_to_server_settings"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:title="@string/send_data_to_server_settings_txt"/>
+</menu>
