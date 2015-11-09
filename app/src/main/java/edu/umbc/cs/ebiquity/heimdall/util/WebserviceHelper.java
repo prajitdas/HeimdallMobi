@@ -28,14 +28,15 @@ import android.os.AsyncTask;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
+
 import edu.umbc.cs.ebiquity.heimdall.HeimdallApplication;
 import edu.umbc.cs.ebiquity.heimdall.data.ContextData;
 
 public class WebserviceHelper {	
 	private Context context;
 	
-	private static HeimdallDBHelper hmaDBHelper;
-	private static SQLiteDatabase hmaDB;
+	private static HeimdallDBHelper HeimdallDBHelper;
+	private static SQLiteDatabase HeimdallDB;
 
 	private static String recentlyChangedAppPackageName = new String();
 	private static List<String> currentlyInstalledAppsList = new ArrayList<String>();
@@ -64,7 +65,7 @@ public class WebserviceHelper {
 	 */
 	public void sendTheData() {
 		if(isOnline())
-			new SendDataToServerAsyncTask().execute();// for older method HMAApplication.getConstWebserviceUri());
+			new SendDataToServerAsyncTask().execute();// for older method HeimdallApplication.getConstWebserviceUri());
 	}
 
 	private class SendDataToServerAsyncTask extends AsyncTask<String, String, String> {
@@ -72,11 +73,11 @@ public class WebserviceHelper {
 		// Do the long-running work in here
 		@Override
 	    protected String doInBackground(String... params) {
-//				Log.d(HMAApplication.getCurrentAppsDebugTag(), "Loading contents...");
+//				Log.d(HeimdallApplication.getCurrentAppsDebugTag(), "Loading contents...");
 			publishProgress("Loading contents..."); // Calls onProgressUpdate()
 			try {
-//					Log.d(HMAApplication.getCurrentAppsDebugTag(), "Loading SOAP...");
-				String reqXMLPrefix = "<?xml version=\"1.0\" ?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\"><S:Body><ns2:printString xmlns:ns2=\"http://webservice.hma.mithril.android.ebiquity.cs.umbc.edu/\"><arg0>";
+//					Log.d(HeimdallApplication.getCurrentAppsDebugTag(), "Loading SOAP...");
+				String reqXMLPrefix = "<?xml version=\"1.0\" ?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\"><S:Body><ns2:printString xmlns:ns2=\"http://webservice.Heimdall.mithril.android.ebiquity.cs.umbc.edu/\"><arg0>";
 				String reqXMLPostfix = "</arg0></ns2:printString></S:Body></S:Envelope>";
 				
 				String request = reqXMLPrefix+writeDataToStream()+reqXMLPostfix;
@@ -99,23 +100,23 @@ public class WebserviceHelper {
 					httpURLConnection.setDoOutput(true);
 					httpURLConnection.connect();
 					
-//						Log.d(HMAApplication.getCurrentAppsDebugTag(), "Hardcoded call starts...");
+//						Log.d(HeimdallApplication.getCurrentAppsDebugTag(), "Hardcoded call starts...");
 					//Send request
 					BufferedOutputStream out = new BufferedOutputStream(httpURLConnection.getOutputStream());
 					out.write(request.getBytes());
-//						Log.d(HMAApplication.getCurrentAppsDebugTag(), out.toString());
+//						Log.d(HeimdallApplication.getCurrentAppsDebugTag(), out.toString());
 					out.flush();
 					out.close();
-//						Log.d(HMAApplication.getCurrentAppsDebugTag(), "Hardcoded call ends...");
+//						Log.d(HeimdallApplication.getCurrentAppsDebugTag(), "Hardcoded call ends...");
 
 					//Get Response	
 					InputStream in = new BufferedInputStream(httpURLConnection.getInputStream());
-//						Log.d(HMAApplication.getCurrentAppsDebugTag(), "Input stream reading...");
+//						Log.d(HeimdallApplication.getCurrentAppsDebugTag(), "Input stream reading...");
 					resp = convertInputStreamToString(in);
-//						Log.d(HMAApplication.getCurrentAppsDebugTag(), "Read from server: "+resp);
+//						Log.d(HeimdallApplication.getCurrentAppsDebugTag(), "Read from server: "+resp);
 				} catch (IOException e) {
 					// writing exception to log
-					e.printStackTrace();//(HMAApplication.getCurrentAppsDebugTag(), e.getStackTrace().toString());
+					e.printStackTrace();//(HeimdallApplication.getCurrentAppsDebugTag(), e.getStackTrace().toString());
 				} catch (Exception e) {
 					e.printStackTrace();
 					return null;
@@ -160,15 +161,15 @@ public class WebserviceHelper {
 		JSONArray jsonArray = new JSONArray();
 		for(String applicationInfo : getCurrentlyInstalledAppsList()) {
 			jsonArray.put(applicationInfo);
-//			HMAApplication.addToAppList(applicationInfo);
+//			HeimdallApplication.addToAppList(applicationInfo);
 //			        	jsonArray.put("Facebook");
 //			        	jsonArray.put("Twitter");
 //			        	jsonArray.put("G+");
-//			Log.d(HMAApplication.getDebugTag(), "in application info writing JSON");
+//			Log.d(HeimdallApplication.getDebugTag(), "in application info writing JSON");
 		}
 		jsonParam.put("currentApps",jsonArray);
 		
-//		Log.d(HMAApplication.getDebugTag(), jsonParam.toString());
+//		Log.d(HeimdallApplication.getDebugTag(), jsonParam.toString());
 		return jsonParam.toString();
 	}
 
@@ -210,7 +211,7 @@ public class WebserviceHelper {
 	 * @return 
 	 */
 	public void collectTheData() {
-		for(String app:hmaDBHelper.readAppPackageNames(hmaDB)) {
+		for(String app:HeimdallDBHelper.readAppPackageNames(HeimdallDB)) {
 			currentlyInstalledAppsList.add(app);
 		}
 	}
@@ -219,8 +220,8 @@ public class WebserviceHelper {
 		/**
 		 * Database creation and default data insertion, happens only once.
 		 */
-		hmaDBHelper = new HeimdallDBHelper(context);
-		hmaDB = hmaDBHelper.getWritableDatabase();
+		HeimdallDBHelper = new HeimdallDBHelper(context);
+		HeimdallDB = HeimdallDBHelper.getWritableDatabase();
 	}
 	
 	private static String convertInputStreamToString(InputStream inputStream) throws IOException{
@@ -230,21 +231,21 @@ public class WebserviceHelper {
         while((line = bufferedReader.readLine()) != null)
             result += line;
         inputStream.close();
-//		Log.d(HMAApplication.getCurrentAppsDebugTag(), "Input stream reading complete...");
+//		Log.d(HeimdallApplication.getCurrentAppsDebugTag(), "Input stream reading complete...");
         return result;
     }
 	
 	public String findNewlyInstalledApp(String extraUid) {
 		setPackageAdded(true);
-//		Log.d(HMAApplication.getDebugTag(), "finding new app");
+//		Log.d(HeimdallApplication.getDebugTag(), "finding new app");
 		Collection<String> appListPrev = new ArrayList<String>();
-		appListPrev = hmaDBHelper.readAppPackageNames(hmaDB);
+		appListPrev = HeimdallDBHelper.readAppPackageNames(HeimdallDB);
 		Collection<String> appListNow = new ArrayList<String>();
 		for(ApplicationInfo appInfo : context.getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA)) {
 			try {
 				if(appInfo.packageName != null) {
 					appListNow.add(appInfo.packageName);
-					hmaDBHelper.createApp(hmaDB, appInfo); // Add new app to database
+					HeimdallDBHelper.createApp(HeimdallDB, appInfo); // Add new app to database
 				}
 			} catch(Exception e) {
 				e.printStackTrace();
@@ -258,13 +259,13 @@ public class WebserviceHelper {
 				return appName;
 			}
 		return null;
-//		hmaDBHelper.createApp(hmaDB, getAppNameFromUid(extraUid));
+//		HeimdallDBHelper.createApp(HeimdallDB, getAppNameFromUid(extraUid));
 	}
 
 	public String findPackageChanged(String extraUid) {
 		setPackageChanged(true);
 		String appName = getAppNameFromUid(extraUid);
-		hmaDBHelper.updateApp(hmaDB, appName);
+		HeimdallDBHelper.updateApp(HeimdallDB, appName);
 		return appName;
 	}
 	
@@ -272,7 +273,7 @@ public class WebserviceHelper {
 		setPackageRemoved(true);
 		Log.d(HeimdallApplication.getDebugTag(), "finding removed app");
 		Collection<String> appListPrev = new ArrayList<String>();
-		appListPrev = hmaDBHelper.readAppPackageNames(hmaDB);
+		appListPrev = HeimdallDBHelper.readAppPackageNames(HeimdallDB);
 		Collection<String> appListNow = new ArrayList<String>();
 		for(ApplicationInfo appInfo : context.getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA)) {
 			try {
@@ -288,20 +289,20 @@ public class WebserviceHelper {
 		if (!appListPrev.isEmpty())
 			for(String appName:appListPrev) {
 				setRecentlyChangedAppPackageName(appName);
-				hmaDBHelper.deleteApp(hmaDB, appName);// Remove app from DB
+				HeimdallDBHelper.deleteApp(HeimdallDB, appName);// Remove app from DB
 				return appName;
 			}
 		return null;
-//		hmaDBHelper.createApp(hmaDB, getAppNameFromUid(extraUid));
+//		HeimdallDBHelper.createApp(HeimdallDB, getAppNameFromUid(extraUid));
 //		String appName = getAppNameFromUid(extraUid);
-//		hmaDBHelper.deleteApp(hmaDB, appName);
+//		HeimdallDBHelper.deleteApp(HeimdallDB, appName);
 //		return appName;
 	}
 	
 	public String findPackageReplaced(String extraUid) {
 		setPackageReplaced(true);
 		String appName = getAppNameFromUid(extraUid);
-		hmaDBHelper.updateApp(hmaDB, appName);
+		HeimdallDBHelper.updateApp(HeimdallDB, appName);
 		return appName;
 	}
 
@@ -354,20 +355,20 @@ public class WebserviceHelper {
 		this.context = context;
 	}
 
-	public static HeimdallDBHelper getHmaDBHelper() {
-		return hmaDBHelper;
+	public static HeimdallDBHelper getHeimdallDBHelper() {
+		return HeimdallDBHelper;
 	}
 
-	public static void setHmaDBHelper(HeimdallDBHelper hmaDBHelper) {
-		WebserviceHelper.hmaDBHelper = hmaDBHelper;
+	public static void setHeimdallDBHelper(HeimdallDBHelper HeimdallDBHelper) {
+		WebserviceHelper.HeimdallDBHelper = HeimdallDBHelper;
 	}
 
-	public static SQLiteDatabase getHmaDB() {
-		return hmaDB;
+	public static SQLiteDatabase getHeimdallDB() {
+		return HeimdallDB;
 	}
 
-	public static void setHmaDB(SQLiteDatabase hmaDB) {
-		WebserviceHelper.hmaDB = hmaDB;
+	public static void setHeimdallDB(SQLiteDatabase HeimdallDB) {
+		WebserviceHelper.HeimdallDB = HeimdallDB;
 	}
 
 	public static boolean isPackageAdded() {

@@ -4,15 +4,33 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
+        <config>
+          <theme>@android:style/Theme.Material.Light</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/settings.xml">
+        <config>
+          <theme>@android:style/Theme.Material.Light</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42cc3e99-68b8-4075-8baa-f03a18dfdfcc" name="Default" comment="added logic in Heimdall">
+    <list default="true" id="42cc3e99-68b8-4075-8baa-f03a18dfdfcc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app-release.apk" afterPath="$PROJECT_DIR$/app/app-release.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/HeimdallApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/HeimdallApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/SendAppDataToServerSettingsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/SendAppDataToServerSettingsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ShowAppsMainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ShowAppsMainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ViewAppDetailsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ViewAppDetailsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/WebserviceHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/WebserviceHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/settings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Heimdall.iws" />
@@ -40,56 +58,7 @@
     <favorites_list name="Heimdall" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9214381">
-              <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-              <folding>
-                <element signature="e#1271#1514#0" expanded="true" />
-                <element signature="e#1513#1514#0" expanded="true" />
-                <element signature="e#1634#1916#0" expanded="true" />
-                <element signature="e#1915#1916#0" expanded="true" />
-                <element signature="e#3129#3130#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.034483">
-              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-              <folding>
-                <element signature="e#318#353#0" expanded="true" />
-                <element signature="e#379#414#0" expanded="true" />
-                <element signature="e#438#471#0" expanded="true" />
-                <element signature="e#498#531#0" expanded="true" />
-                <element signature="e#556#596#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1564,19 +1533,19 @@
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/receiver/App.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/HeimdallApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/service/CurrentAppsService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ViewAppDetailsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/AppPermListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/receiver/AppInstallBroadcastReceiver.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/SendAppDataToServerSettingsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/AppListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/HMADBHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/WebserviceHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ShowAppsMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/NotificationView.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/WebserviceHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/SendAppDataToServerSettingsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ViewAppDetailsActivity.java" />
       </list>
     </option>
   </component>
@@ -1725,9 +1694,15 @@
               <option name="myItemId" value="Heimdall" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+              <option name="myItemId" value="Heimdall" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1740,26 +1715,8 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Heimdall" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1778,60 +1735,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="heimdall" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Heimdall" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="heimdall" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Heimdall" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="heimdall" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Heimdall" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2091,7 +1994,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447060018080</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added logic in Heimdall">
+      <created>1447068472981</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1447068472981</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2100,10 +2009,10 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26509434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26509434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2169,60 +2078,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/data/ContextData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#891#892#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#966#967#0" expanded="false" />
-            <element signature="e#997#998#0" expanded="false" />
-            <element signature="e#1041#1042#0" expanded="false" />
-            <element signature="e#1075#1076#0" expanded="false" />
-            <element signature="e#1112#1113#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1177#1178#0" expanded="false" />
-            <element signature="e#1207#1208#0" expanded="false" />
-            <element signature="e#1236#1237#0" expanded="false" />
-            <element signature="e#1263#1264#0" expanded="false" />
-            <element signature="e#1311#1312#0" expanded="false" />
-            <element signature="e#1351#1352#0" expanded="false" />
-            <element signature="e#1411#1412#0" expanded="false" />
-            <element signature="e#1457#1458#0" expanded="false" />
-            <element signature="e#1503#1504#0" expanded="false" />
-            <element signature="e#1541#1542#0" expanded="false" />
-            <element signature="e#1570#1571#0" expanded="false" />
-            <element signature="e#1619#1620#0" expanded="false" />
-            <element signature="e#1912#1913#0" expanded="false" />
-            <element signature="e#1943#1944#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/HeimdallApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0608">
           <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1299#1300#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1385#1386#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1479#1480#0" expanded="true" />
-            <element signature="e#1513#1514#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
-            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1307#1308#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2243,34 +2105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ViewAppDetailsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44802344">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding>
-            <element signature="e#2830#3645#0" expanded="true" />
-            <element signature="e#3644#3645#0" expanded="true" />
-            <element signature="e#3693#4026#0" expanded="true" />
-            <element signature="e#4025#4026#0" expanded="true" />
-            <element signature="e#4073#4406#0" expanded="true" />
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4465#4466#0" expanded="true" />
-            <element signature="e#4499#4500#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_show_apps_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76605505">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -2324,16 +2158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/WebserviceHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8623719">
-          <caret line="272" column="33" selection-start-line="272" selection-start-column="33" selection-end-line="272" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/NotificationView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2350,16 +2174,6 @@
           <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding>
             <element signature="e#1608#1650#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/SendAppDataToServerSettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9960053">
-          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2385,33 +2199,119 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/data/ContextData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.99633026">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.034483">
+        <state vertical-scroll-proportion="-10.75862">
           <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_list_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_app_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_show_apps_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5172415">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding>
-            <element signature="e#318#353#0" expanded="true" />
-            <element signature="e#379#414#0" expanded="true" />
-            <element signature="e#438#471#0" expanded="true" />
-            <element signature="e#498#531#0" expanded="true" />
-            <element signature="e#556#596#0" expanded="true" />
+            <element signature="e#1249#1266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/notification_view.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/settings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/util/WebserviceHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="136" column="71" selection-start-line="136" selection-start-column="71" selection-end-line="136" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9214381">
-          <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/SendAppDataToServerSettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="84" selection-start-line="119" selection-start-column="84" selection-end-line="119" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/ViewAppDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41763565">
+          <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
           <folding>
-            <element signature="e#1271#1514#0" expanded="true" />
-            <element signature="e#1513#1514#0" expanded="true" />
-            <element signature="e#1634#1916#0" expanded="true" />
-            <element signature="e#1915#1916#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

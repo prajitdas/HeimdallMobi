@@ -8,12 +8,12 @@ import android.content.SharedPreferences;
 public class HeimdallApplication extends Application {
     private static SharedPreferences preferences;
     private static final String APPLIST_FILENAME = "applist.json";
-    private static final String CONST_DEBUG_TAG = "HMA_APPLICATION_DEBUG_TAG";
+    private static final String CONST_DEBUG_TAG = "Heimdall_APPLICATION_DEBUG_TAG";
     private static final String CONST_DATA_COLLECTION_COMPLETE = "CONST_DATA_COLLECTION_COMPLETE";
     private static final String CONST_ACCEPT_DECISION_KEY = "acceptDecisionKey";
     private static final String CONST_WEBSERVICE_URI = "http://eb4.cs.umbc.edu:1234/ws/datamanager";
     private static final String CONST_NOTIFICATION_TITLE = "HeimdallApplication notification";
-    private final static String CONST_DATABASE_NAME = "HMADB";
+    private final static String CONST_DATABASE_NAME = "HeimdallDB";
 
     public static String getConstDataCollectionComplete() {
         return CONST_DATA_COLLECTION_COMPLETE;

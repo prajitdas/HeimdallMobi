@@ -26,7 +26,7 @@ public class ShowAppsMainActivity extends ListActivity {
     private List<ApplicationInfo> appList;
 
     private static HeimdallDBHelper heimdallDBHelper;
-    private static SQLiteDatabase hmaDB;
+    private static SQLiteDatabase HeimdallDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class ShowAppsMainActivity extends ListActivity {
          * Database creation and default data insertion, happens only once.
          */
         heimdallDBHelper = new HeimdallDBHelper(this);
-        hmaDB = heimdallDBHelper.getWritableDatabase();
+        HeimdallDB = heimdallDBHelper.getWritableDatabase();
     }
 
     private void initView() {
@@ -91,7 +91,7 @@ public class ShowAppsMainActivity extends ListActivity {
 
     public void setAppList() {
         appList = new ArrayList<ApplicationInfo>();
-        for(String appPackageName : heimdallDBHelper.readAppPackageNames(hmaDB)) {
+        for(String appPackageName : heimdallDBHelper.readAppPackageNames(HeimdallDB)) {
             try {
                 if(appPackageName != null) {
                     appList.add(packageManager.getApplicationInfo(appPackageName,

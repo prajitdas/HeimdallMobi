@@ -11,6 +11,7 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
+
 import edu.umbc.cs.ebiquity.heimdall.HeimdallApplication;
 import edu.umbc.cs.ebiquity.heimdall.R;
 import edu.umbc.cs.ebiquity.heimdall.service.CurrentAppsService;
@@ -61,8 +62,8 @@ public class SendAppDataToServerSettingsActivity extends PreferenceActivity {
 	mStartSvcBtn = (Button) findViewById(R.id.startCurrentAppsSvcBtn);
 
 	boolean acceptedOrNot;
-	if(HMAApplication.getPreferences().contains(HMAApplication.getConstAcceptDecisionKey())) {
-		acceptedOrNot = HMAApplication.getPreferences().getBoolean(HMAApplication.getConstAcceptDecisionKey(), false);
+	if(HeimdallApplication.getPreferences().contains(HeimdallApplication.getConstAcceptDecisionKey())) {
+		acceptedOrNot = HeimdallApplication.getPreferences().getBoolean(HeimdallApplication.getConstAcceptDecisionKey(), false);
 		if(acceptedOrNot) {
 			mAcceptAgreementBtn.setEnabled(false);
 			mStartSvcBtn.setEnabled(true);
@@ -75,7 +76,7 @@ public class SendAppDataToServerSettingsActivity extends PreferenceActivity {
 		mAcceptAgreementBtn.setEnabled(true);
 		mStartSvcBtn.setEnabled(false);
 	}*/
-//	HMAApplication.setContextData(this, mLastLocation);
+//	HeimdallApplication.setContextData(this, mLastLocation);
 //}
 
     /*	private void setOnClickListeners() {
@@ -83,8 +84,8 @@ public class SendAppDataToServerSettingsActivity extends PreferenceActivity {
 
             @Override
             public void onClick(View v) {
-                Editor editor = HMAApplication.getPreferences().edit();
-                editor.putBoolean(HMAApplication.getConstAcceptDecisionKey(), true);
+                Editor editor = HeimdallApplication.getPreferences().edit();
+                editor.putBoolean(HeimdallApplication.getConstAcceptDecisionKey(), true);
                 editor.commit();
 
                 mStartSvcBtn.setEnabled(true);

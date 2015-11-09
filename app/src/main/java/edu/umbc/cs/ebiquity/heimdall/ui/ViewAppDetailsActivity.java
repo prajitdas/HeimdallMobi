@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
 import edu.umbc.cs.ebiquity.heimdall.R;
 import edu.umbc.cs.ebiquity.heimdall.util.AppPermListAdapter;
 import edu.umbc.cs.ebiquity.heimdall.util.HeimdallDBHelper;
@@ -50,9 +51,9 @@ public class ViewAppDetailsActivity extends ListActivity {
         mImgBtnAppIsBad = (ImageButton) findViewById(R.id.app_is_bad_btn);
 
         packageName = getIntent().getStringExtra(HeimdallDBHelper.getAppPackageName());
-        HeimdallDBHelper hmaDBHelper = new HeimdallDBHelper(this);
-        SQLiteDatabase hmaDB = hmaDBHelper.getWritableDatabase();
-        setTitle(getResources().getText(R.string.title_activity_view_app_details)+": "+hmaDBHelper.readAppNameByPackageName(hmaDB, packageName));
+        HeimdallDBHelper HeimdallDBHelper = new HeimdallDBHelper(this);
+        SQLiteDatabase HeimdallDB = HeimdallDBHelper.getWritableDatabase();
+        setTitle(getResources().getText(R.string.title_activity_view_app_details)+": "+HeimdallDBHelper.readAppNameByPackageName(HeimdallDB, packageName));
 
         setAppPermList(packageName);
 

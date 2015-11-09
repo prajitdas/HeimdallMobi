@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import edu.umbc.cs.ebiquity.heimdall.R;
@@ -94,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("policy1", Context.MODE_WORLD_READABLE);
         policy1 = prefs.getString("policy1", null);
         Log.d("PKDLog", "policy1: " + policy1);
-        Toast.makeText(this, policy1, Toast.LENGTH_SHORT).show();
     }
 
     private void togglePolicyUsingContentProvider(boolean isChecked) {
