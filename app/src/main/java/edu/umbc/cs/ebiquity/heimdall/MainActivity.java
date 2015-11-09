@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         policy1Switch = (Switch) findViewById(R.id.policy1Switch);
+        policy1Switch.setChecked(getPolicyState());
         policy1Switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -48,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    private boolean getPolicyState() {
+        SharedPreferences prefs = getSharedPreferences("policy1", Context.MODE_WORLD_READABLE);
+        if(prefs.getString("policy1", "false").equals("true"))
+            return true;
+        return false;
     }
 
     private void test() {
