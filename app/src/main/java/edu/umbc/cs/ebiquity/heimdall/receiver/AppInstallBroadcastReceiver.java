@@ -8,17 +8,17 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
 import edu.umbc.cs.ebiquity.heimdall.ui.NotificationView;
-import edu.umbc.cs.ebiquity.heimdall.util.WebserviceHelper;
+import edu.umbc.cs.ebiquity.heimdall.util.WebserviceSendDataHelper;
 import edu.umbc.cs.ebiquity.heimdall.R;
 /**
  * Created by Prajit on 11/9/2015.
  */
 public class AppInstallBroadcastReceiver extends BroadcastReceiver {
-    private static WebserviceHelper webserviceHelper;
+    private static WebserviceSendDataHelper webserviceSendDataHelper;
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        webserviceHelper = new WebserviceHelper(context);
+        webserviceSendDataHelper = new WebserviceSendDataHelper(context);
         String message = new String();
         /**
          * Broadcast Action: A new application package has been installed on the device. The data contains the name of the package. Note that the newly installed package does not receive this broadcast.
@@ -29,10 +29,10 @@ public class AppInstallBroadcastReceiver extends BroadcastReceiver {
          * Constant Value: "android.intent.action.PACKAGE_ADDED"
          */
         if(intent.getAction() == "android.intent.action.PACKAGE_ADDED") {
-            message = "App installed: " + webserviceHelper.findNewlyInstalledApp(Intent.EXTRA_UID);
+            message = "App installed: " + webserviceSendDataHelper.findNewlyInstalledApp(Intent.EXTRA_UID);
 //			Log.d(HeimdallApplication.getDebugTag(), "Installation complete!\n"+message);
-            webserviceHelper.collectTheData();
-            webserviceHelper.sendTheData();
+            webserviceSendDataHelper.collectTheData();
+            webserviceSendDataHelper.sendTheData();
             Notification(context, message);
         }
         /**
@@ -48,9 +48,9 @@ public class AppInstallBroadcastReceiver extends BroadcastReceiver {
              * Don't send data on update for now
              */
 //			Log.d(HeimdallApplication.getDebugTag(), "package changed, nothing to do");
-//			message = "An existing application package has been changed (e.g. a component has been enabled or disabled): " + webserviceHelper.findPackageChanged(Intent.EXTRA_UID);
-//			webserviceHelper.collectTheData();
-//			webserviceHelper.sendTheData();
+//			message = "An existing application package has been changed (e.g. a component has been enabled or disabled): " + webserviceSendDataHelper.findPackageChanged(Intent.EXTRA_UID);
+//			webserviceSendDataHelper.collectTheData();
+//			webserviceSendDataHelper.sendTheData();
         }
         /**
          * Broadcast Action: An existing application package has been removed from the device. The data contains the name of the package. The package that is being installed does not receive this Intent.
@@ -64,10 +64,10 @@ public class AppInstallBroadcastReceiver extends BroadcastReceiver {
             /**
              * Don't send data on uninstall app for now
              */
-            message = "App uninstalled: " + webserviceHelper.findPackageRemoved(Intent.EXTRA_UID);
+            message = "App uninstalled: " + webserviceSendDataHelper.findPackageRemoved(Intent.EXTRA_UID);
 //			Log.d(HeimdallApplication.getDebugTag(), "Uninstallation complete!\n"+message);
-            webserviceHelper.collectTheData();
-            webserviceHelper.sendTheData();
+            webserviceSendDataHelper.collectTheData();
+            webserviceSendDataHelper.sendTheData();
             Notification(context, message);
         }
         /**
@@ -82,9 +82,9 @@ public class AppInstallBroadcastReceiver extends BroadcastReceiver {
              * Don't send data on update for now
              */
 //			Log.d(HeimdallApplication.getDebugTag(), "package replaced, nothing to do");
-//			message = "New app installed is: " + webserviceHelper.findPackageReplaced(Intent.EXTRA_UID);
-//			webserviceHelper.collectTheData();
-//			webserviceHelper.sendTheData();
+//			message = "New app installed is: " + webserviceSendDataHelper.findPackageReplaced(Intent.EXTRA_UID);
+//			webserviceSendDataHelper.collectTheData();
+//			webserviceSendDataHelper.sendTheData();
         }
     }
 

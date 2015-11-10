@@ -18,14 +18,22 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.ToggleButton;
 
+import java.util.ArrayList;
+
 import edu.umbc.cs.ebiquity.heimdall.R;
 import edu.umbc.cs.ebiquity.heimdall.util.CheckPermissionsHelper;
+import edu.umbc.cs.ebiquity.heimdall.util.WebserviceCheckDataHelper;
 
 public class MainActivity extends AppCompatActivity {
+    private static WebserviceCheckDataHelper webserviceCheckDataHelper;
     private Switch mPolicy1Switch;
     private Button mShowAppsButton;
     private Button mDeleteAppButton;
     private Toolbar toolbar;
+
+    public static WebserviceCheckDataHelper getWebserviceCheckDataHelper() {
+        return webserviceCheckDataHelper;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +56,8 @@ public class MainActivity extends AppCompatActivity {
         mDeleteAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DELETE);
-                intent.setData(Uri.parse(getAppToDelete()));
-                startActivity(intent);
+                webserviceCheckDataHelper = new WebserviceCheckDataHelper(getApplicationContext());
+                webserviceCheckDataHelper.sendTheData();
             }
         });
 
@@ -81,9 +88,6 @@ public class MainActivity extends AppCompatActivity {
         CheckPermissionsHelper.checkMarshMallowPermissions(getApplicationContext(), this);
     }
 
-    private String getAppToDelete() {
-        return "package:edu.umbc.cs.ebiquity.mithril.parserapp";
-    }
 
     private boolean getPolicyState() {
         SharedPreferences prefs = getSharedPreferences("policy1", Context.MODE_WORLD_READABLE);

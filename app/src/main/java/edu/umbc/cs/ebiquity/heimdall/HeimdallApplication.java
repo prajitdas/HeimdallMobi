@@ -6,14 +6,12 @@ import android.content.SharedPreferences;
 
 import java.util.jar.JarFile;
 
+import edu.umbc.cs.ebiquity.heimdall.util.WebserviceCheckDataHelper;
+
 /**
  * Created by Prajit on 11/9/2015.
  */
 public class HeimdallApplication extends Application {
-    public static String[] getPermissionsHeimdallApp() {
-        return PermissionsHeimdallApp;
-    }
-
     private static final String [] PermissionsHeimdallApp = {
             Manifest.permission.GET_ACCOUNTS,
             Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -35,6 +33,9 @@ public class HeimdallApplication extends Application {
     private final static String CONST_DATABASE_NAME = "HeimdallDB";
     private static SharedPreferences preferences;
 
+    public static String[] getPermissionsHeimdallApp() {
+        return PermissionsHeimdallApp;
+    }
     public static int getConstPermissionGetAccounts() { return CONST_PERMISSION_GET_ACCOUNTS; }
     public static int getConstPermissionAccessCoarseLocation() { return CONST_PERMISSION_ACCESS_COARSE_LOCATION; }
     public static int getConstPermissionWriteExternalStorage() { return CONST_PERMISSION_WRITE_EXTERNAL_STORAGE; }

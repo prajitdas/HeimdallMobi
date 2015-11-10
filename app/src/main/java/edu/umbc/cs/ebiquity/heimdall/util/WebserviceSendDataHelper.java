@@ -32,7 +32,7 @@ import android.widget.Toast;
 import edu.umbc.cs.ebiquity.heimdall.HeimdallApplication;
 import edu.umbc.cs.ebiquity.heimdall.data.ContextData;
 
-public class WebserviceHelper {	
+public class WebserviceSendDataHelper {
 	private Context context;
 	
 	private static HeimdallDBHelper HeimdallDBHelper;
@@ -51,7 +51,7 @@ public class WebserviceHelper {
 	 * ------------------------------------------------------------------------------------------------------------------------
 	 */
 
-	public WebserviceHelper(Context context) {
+	public WebserviceSendDataHelper(Context context) {
 		this.context = context;
 		setPackageAdded(false);
 		setPackageChanged(false);
@@ -335,7 +335,7 @@ public class WebserviceHelper {
 
 	public void setRecentlyChangedAppPackageName(
 			String recentlyChangedAppPackageName) {
-		WebserviceHelper.recentlyChangedAppPackageName = recentlyChangedAppPackageName;
+		WebserviceSendDataHelper.recentlyChangedAppPackageName = recentlyChangedAppPackageName;
 	}
 
 	public List<String> getCurrentlyInstalledAppsList() {
@@ -344,7 +344,7 @@ public class WebserviceHelper {
 
 	public void setCurrentlyInstalledAppsList(
 			List<String> currentlyInstalledAppsList) {
-		WebserviceHelper.currentlyInstalledAppsList = currentlyInstalledAppsList;
+		WebserviceSendDataHelper.currentlyInstalledAppsList = currentlyInstalledAppsList;
 	}
 
 	public Context getContext() {
@@ -360,7 +360,7 @@ public class WebserviceHelper {
 	}
 
 	public static void setHeimdallDBHelper(HeimdallDBHelper HeimdallDBHelper) {
-		WebserviceHelper.HeimdallDBHelper = HeimdallDBHelper;
+		WebserviceSendDataHelper.HeimdallDBHelper = HeimdallDBHelper;
 	}
 
 	public static SQLiteDatabase getHeimdallDB() {
@@ -368,7 +368,7 @@ public class WebserviceHelper {
 	}
 
 	public static void setHeimdallDB(SQLiteDatabase HeimdallDB) {
-		WebserviceHelper.HeimdallDB = HeimdallDB;
+		WebserviceSendDataHelper.HeimdallDB = HeimdallDB;
 	}
 
 	public static boolean isPackageAdded() {
@@ -376,7 +376,7 @@ public class WebserviceHelper {
 	}
 
 	public static void setPackageAdded(boolean isPackageAdded) {
-		WebserviceHelper.isPackageAdded = isPackageAdded;
+		WebserviceSendDataHelper.isPackageAdded = isPackageAdded;
 	}
 
 	public static boolean isPackageChanged() {
@@ -384,7 +384,7 @@ public class WebserviceHelper {
 	}
 
 	public static void setPackageChanged(boolean isPackageChanged) {
-		WebserviceHelper.isPackageChanged = isPackageChanged;
+		WebserviceSendDataHelper.isPackageChanged = isPackageChanged;
 	}
 
 	public static boolean isPackageRemoved() {
@@ -392,7 +392,7 @@ public class WebserviceHelper {
 	}
 
 	public static void setPackageRemoved(boolean isPackageRemoved) {
-		WebserviceHelper.isPackageRemoved = isPackageRemoved;
+		WebserviceSendDataHelper.isPackageRemoved = isPackageRemoved;
 	}
 
 	public static boolean isPackageReplaced() {
@@ -400,6 +400,6 @@ public class WebserviceHelper {
 	}
 
 	public static void setPackageReplaced(boolean isPackageReplaced) {
-		WebserviceHelper.isPackageReplaced = isPackageReplaced;
+		WebserviceSendDataHelper.isPackageReplaced = isPackageReplaced;
 	}
 }

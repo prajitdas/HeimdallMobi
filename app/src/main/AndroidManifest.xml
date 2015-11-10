@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.umbc.cs.ebiquity.heimdall" >
-    
-    <uses-permission android:name="android.permission.command.READ_WRITE_CONTENT"/>
+
+    <uses-permission android:name="android.permission.command.READ_WRITE_CONTENT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
@@ -43,19 +43,30 @@
             android:name=".ui.ViewAppDetailsActivity"
             android:label="@string/title_activity_view_app_details" >
         </activity>
+
         <service
             android:name=".service.CurrentAppsService"
             android:exported="false" >
         </service>
+
         <receiver android:name=".receiver.AppInstallBroadcastReceiver" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_CHANGED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
                 <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".ui.DeleteAppsActivity"
+            android:label="@string/title_activity_delete_apps"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
+
 </manifest>
