@@ -77,7 +77,7 @@ public class WebserviceHelper {
 			publishProgress("Loading contents..."); // Calls onProgressUpdate()
 			try {
 //					Log.d(HeimdallApplication.getCurrentAppsDebugTag(), "Loading SOAP...");
-				String reqXMLPrefix = "<?xml version=\"1.0\" ?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\"><S:Body><ns2:printString xmlns:ns2=\"http://webservice.Heimdall.mithril.android.ebiquity.cs.umbc.edu/\"><arg0>";
+				String reqXMLPrefix = "<?xml version=\"1.0\" ?><S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\"><S:Body><ns2:printString xmlns:ns2=\"http://webservice.hma.mithril.android.ebiquity.cs.umbc.edu/\"><arg0>";
 				String reqXMLPostfix = "</arg0></ns2:printString></S:Body></S:Envelope>";
 				
 				String request = reqXMLPrefix+writeDataToStream()+reqXMLPostfix;
