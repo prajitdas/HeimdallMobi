@@ -19,6 +19,7 @@ import android.widget.Switch;
 import android.widget.ToggleButton;
 
 import edu.umbc.cs.ebiquity.heimdall.R;
+import edu.umbc.cs.ebiquity.heimdall.util.CheckPermissionsHelper;
 
 public class MainActivity extends AppCompatActivity {
     private Switch mPolicy1Switch;
@@ -75,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+//        mShowAppsButton.performClick();
+        CheckPermissionsHelper.checkMarshMallowPermissions(getApplicationContext(), this);
     }
 
     private String getAppToDelete() {
