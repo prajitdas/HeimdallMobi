@@ -29,7 +29,7 @@
 
     <string name="title_activity_notification_view">Change Notification</string>
     <string name="title_activity_send_app_data_to_server">Send data to server</string>
-    <string name="title_activity_show_apps_main">SyncAppDataActivity</string>
+    <string name="title_activity_show_apps_main">Sync App Data</string>
     <string name="title_activity_view_app_details">App Details for</string>
-    <string name="title_activity_delete_apps">DeleteAppsActivity</string>
+    <string name="title_activity_delete_apps">Delete Apps</string>
 </resources>

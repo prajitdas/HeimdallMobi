@@ -108,9 +108,15 @@ public class WebserviceCheckDataHelper {
     private ArrayList<String> getListOfAppsToDelete(String resp) {
         ArrayList<String> tempList = new ArrayList<>();
 		String [] list = resp.split(">");
-        String [] appList = list[5].split(";");
-        for(int i = 0; i < appList.length; i++)
-            tempList.add("package:"+appList[0]);
+		if(list[5].contains(";")) {
+			String[] appList = list[5].split(";");
+			for (int i = 0; i < appList.length; i++) {
+				tempList.add("package:" + appList[i].replace("-", "."));
+				Log.d(HeimdallApplication.getDebugTag(), "apps:" + appList[i]);
+			}
+			for (String appName : tempList)
+				Log.d(HeimdallApplication.getDebugTag(), appName);
+		}
         return tempList;
     }
 
