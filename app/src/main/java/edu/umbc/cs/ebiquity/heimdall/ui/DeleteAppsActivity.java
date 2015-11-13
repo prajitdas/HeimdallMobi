@@ -29,14 +29,20 @@ public class DeleteAppsActivity extends AppCompatActivity {
         Log.d(HeimdallApplication.getDebugTag(), "app list size = " + appsToDelete.size());
         if(appsToDelete.size()==0)
             finish();
+        if(appsToDelete.size()==1 && appsToDelete.get(0).equals(""))
+            finish();
         mDeleteAppsButton = (Button) findViewById(R.id.deleteAppsButton);
         mDeleteAppsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 for (String appToDelete : appsToDelete) {
-                    Intent intent = new Intent(Intent.ACTION_DELETE);
-                    intent.setData(Uri.parse(appToDelete));
-                    startActivity(intent);
+                    if (appToDelete.equals(""))
+                        continue;
+                    else {
+                        Intent intent = new Intent(Intent.ACTION_DELETE);
+                        intent.setData(Uri.parse(appToDelete));
+                        startActivity(intent);
+                    }
                 }
                 finish();
             }
