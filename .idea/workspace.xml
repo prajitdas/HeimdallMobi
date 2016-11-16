@@ -12,13 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="83e751e1-4eaf-4b04-9b60-fe0d836ebda8" name="Default" comment="mode world readable not supported any more">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-      <change type="MODIFICATION" beforePath="/media/prajit/data/code/android/projects/HeimdallMobi/.idea/workspace.xml" afterPath="/media/prajit/data/code/android/projects/HeimdallMobi/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="/media/prajit/data/code/android/projects/HeimdallMobi/app/app.iml" afterPath="/media/prajit/data/code/android/projects/HeimdallMobi/app/app.iml" />
-      <change type="MODIFICATION" beforePath="/media/prajit/data/code/android/projects/HeimdallMobi/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java" afterPath="/media/prajit/data/code/android/projects/HeimdallMobi/app/src/main/java/edu/umbc/cs/ebiquity/heimdall/ui/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="/media/prajit/data/code/android/projects/HeimdallMobi/app/src/main/res/layout/content_main.xml" afterPath="/media/prajit/data/code/android/projects/HeimdallMobi/app/src/main/res/layout/content_main.xml" />
     </list>
     <ignored path="Heimdall.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2533,6 +2526,9 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -2545,9 +2541,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="apks added" />
     <MESSAGE value="mode world readable not supported any more" />
     <option name="LAST_COMMIT_MESSAGE" value="mode world readable not supported any more" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
