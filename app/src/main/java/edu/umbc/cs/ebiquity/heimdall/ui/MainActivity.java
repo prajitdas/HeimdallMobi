@@ -3,7 +3,6 @@ package edu.umbc.cs.ebiquity.heimdall.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,14 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.ToggleButton;
-
-import java.util.ArrayList;
 
 import edu.umbc.cs.ebiquity.heimdall.R;
 import edu.umbc.cs.ebiquity.heimdall.util.CheckPermissionsHelper;
@@ -90,21 +84,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     private boolean getPolicyState() {
-        SharedPreferences prefs = getSharedPreferences("policy1", Context.MODE_WORLD_READABLE);
-        if(prefs.getString("policy1", "false").equals("true"))
-            return true;
-        return false;
+        SharedPreferences prefs = getSharedPreferences("policy1", Context.MODE_PRIVATE);
+        return prefs.getString("policy1", "false").equals("true");
     }
 
     private void test() {
         String policy1;
-        SharedPreferences prefs = getSharedPreferences("policy1", Context.MODE_WORLD_READABLE);
+        SharedPreferences prefs = getSharedPreferences("policy1", Context.MODE_PRIVATE);
         policy1 = prefs.getString("policy1", null);
         Log.d("PKDLog", "policy1: " + policy1);
     }
 
     private void togglePolicyUsingContentProvider(boolean isChecked) {
-        SharedPreferences sharedpreferences = getSharedPreferences("policy1", Context.MODE_WORLD_READABLE);
+        SharedPreferences sharedpreferences = getSharedPreferences("policy1", Context.MODE_PRIVATE);
         if(isChecked) {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putString("policy1", "true");
